@@ -1,0 +1,9 @@
+[build]
+# Build native ARM64 on Apple Silicon — the stable toolchain installed via
+# rustup is often x86_64-apple-darwin, which would silently run under Rosetta 2
+# and come out ~3x slower for no good reason.
+target = "aarch64-apple-darwin"
+
+# Match C++'s `-march=native`. Without this, rustc targets the generic
+# aarch64-apple-darwin baseline and leaves M-series features on the table.
+rustflags = ["-C", "target-cpu=native"]

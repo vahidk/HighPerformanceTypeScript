@@ -1,0 +1,9 @@
+cpp/main
+dist/
+__pycache__/
+rust/target
+ts/dist
+*.pyc
+Cargo.lock
+.claude/
+node_modules/
